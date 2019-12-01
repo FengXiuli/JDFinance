@@ -1,0 +1,9 @@
+// 使用UTF-8编码
+@charset "UTF-8";
+
+// @mixin是一个函数，表示我们使用flex布局，（是用来后面实现继承的）
+@mixin flex($direction:column,$inline:block) {
+  display: if($inline==block,flex,inline-flex);
+  flex-direction: $direction;
+  flex-wrap: wrap;
+}

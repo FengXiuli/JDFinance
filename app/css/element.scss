@@ -1,0 +1,43 @@
+//引入layout模块
+@import "./layout.scss";
+
+// 1.按钮样式
+@mixin btn($size:14px,$color:#fff,$bgcolor:#F04752,$padding:5px,$radius:5px) {
+  padding: $padding;
+  background-color: $bgcolor;
+  border-radius: $radius;
+  //小技巧：background-color和border的背景色颜色设置为一样，看似没写，实则写了
+  border: 1px solid $bgcolor;
+  font-size: $size;
+  color: $color;
+  text-align: center;
+  line-height: 1;
+  display: inline-block;
+}
+
+//2.list样式 默认column
+@mixin list($direction:column) {
+    //继承了layout的direction
+  @include flex($direction);
+}
+
+// 3.面板样式
+@mixin panel($bgcolor:#fff,$padding:0,$margin:20px 0,$height:112px,$txtPadding:0 32px,$color:#333,$fontSize:32px) {
+  background: $bgcolor;
+  padding: $padding;
+  margin: $margin;
+  >h4{
+    height: $height;
+    line-height: $height;
+    padding: $txtPadding;
+    // 内容过长，设置为...
+    text-overflow: ellipsis;
+    // 换行
+    white-space: nowrap;
+    // 超出隐藏
+    overflow: hidden;
+    text-align: center;
+    color: $color;
+    font-size: $fontSize
+  }
+}
